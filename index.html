@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Agency Trip Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Sleep Agency</p>
+        <h1>Trip Planner</h1>
+      </div>
+      <div class="badge" id="roleBadge">View Mode</div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Trip Setup</h2>
+        <form id="tripForm" class="stack">
+          <label>
+            Destination
+            <input id="destination" name="destination" placeholder="Tokyo, Japan" required />
+          </label>
+
+          <div class="grid2">
+            <label>
+              Start date
+              <input id="startDate" type="date" required />
+            </label>
+            <label>
+              End date
+              <input id="endDate" type="date" required />
+            </label>
+          </div>
+
+          <div class="grid2">
+            <label>
+              Travelers
+              <input id="travelers" type="number" min="1" value="2" required />
+            </label>
+            <label>
+              Budget ($)
+              <input id="budget" type="number" min="0" value="3000" required />
+            </label>
+          </div>
+
+          <button type="submit" id="generateBtn">Generate Itinerary</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Daily Itinerary</h2>
+        <div id="summary" class="summary muted">Fill in your trip details to generate a plan.</div>
+        <div id="days" class="stack"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Budget Snapshot</h2>
+        <div id="budgetBreakdown" class="stack muted">No itinerary yet.</div>
+        <hr />
+        <h3>Share</h3>
+        <label>
+          Role
+          <select id="roleSelect">
+            <option value="view">Viewer</option>
+            <option value="edit">Editor</option>
+          </select>
+        </label>
+        <p class="muted small">Tip: this app also reads <code>?role=view</code> and <code>?role=edit</code> from URL params.</p>
+      </section>
+    </main>
+
+    <template id="dayTemplate">
+      <article class="dayCard">
+        <div class="row between">
+          <h3></h3>
+          <button class="addActivityBtn">+ Activity</button>
+        </div>
+        <ul class="activities"></ul>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

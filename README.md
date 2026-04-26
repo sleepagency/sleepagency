@@ -1,16 +1,31 @@
-## Hi there 👋
+# Sleep Agency Trip Planner (Rebuild)
 
-<!--
-**sleepagency/sleepagency** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+This is a clean-room rebuild of the trip planner experience from:
+`https://trip-planner-v2-eosin.vercel.app/app?role=view`
 
-Here are some ideas to get you started:
+## What was broken down from the reference
 
-- 🔭 I’m currently working on this page
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- **Single-page planner flow:** inputs on the left, generated trip output on the right.
+- **Role-based UX:** support for `view` and `edit` behaviors from URL/query state.
+- **Itinerary generation:** transform dates into day cards and suggested activity lists.
+- **Budget summary:** split a total trip budget into meaningful categories.
+
+## What this rebuild includes
+
+- Pure HTML/CSS/JS app (no framework required).
+- URL-driven role mode (`?role=view` / `?role=edit`).
+- Trip form with destination, date range, traveler count, and total budget.
+- Auto-generated daily itinerary cards.
+- Budget category breakdown + per-day/per-traveler estimates.
+- Lightweight responsive styling.
+
+## Run locally
+
+Open `index.html` in a browser.
+
+For a local HTTP server:
+
+```bash
+python -m http.server 4173
+# then open http://localhost:4173
+```
