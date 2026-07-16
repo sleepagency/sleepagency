@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "yt-dlp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@kevinwatt/yt-dlp-mcp@latest"
+      ],
+      "env": {}
+    }
+  }
+}

@@ -1,0 +1,2 @@
+# Claude Code personal/local settings (per-machine permission approvals, etc.)
+.claude/settings.local.json
